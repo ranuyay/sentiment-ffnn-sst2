@@ -8,7 +8,7 @@ Binary sentiment classification on the **GLUE SST-2** dataset using a feed-forwa
 
 Organizations generate large volumes of unstructured text through reviews, surveys, support tickets, and internal communications. While this text contains valuable signals about satisfaction, risk, and emerging issues, it is rarely analyzed at scale due to time and resource constraints.
 
-This project demonstrates how short text can be converted into **actionable sentiment signals** while explicitly accounting for **model uncertainty**. Rather than fully automating decisions, the system prioritizes human attention by routing ambiguous predictions to manual review.
+“This project demonstrates how short text can be converted into actionable sentiment signals while explicitly accounting for model uncertainty and decision risk.”
 
 Key goals:
 
@@ -16,6 +16,18 @@ Key goals:
 * Evaluate model behavior beyond aggregate accuracy
 * Separate **model prediction** from **decision policy**
 * Demonstrate confidence-based automation with human oversight
+
+---
+
+## Quick Start
+
+This repository is structured as a lightweight, notebook-driven analysis with reusable components separated for clarity.
+
+To explore the full workflow:
+
+```bash
+pip install -r requirements.txt
+jupyter notebook notebooks/sentiment_ffnn_sst2.ipynb
 
 ---
 
@@ -162,17 +174,20 @@ In all cases, the model supports — rather than replaces — human judgment.
 
 ## Repository Structure
 
-```
 sentiment-ffnn-sst2/
-  README.md
-  notebook/
-    sentiment_demo.ipynb
-  outputs/
-    figures/
-    human_review_queue.csv
-```
+├── README.md
+├── notebooks/
+│ └── sentiment_ffnn_sst2.ipynb
+├── src/
+│ └── (reserved for modularized model and evaluation logic)
+├── requirements.txt
+├── .gitignore
+└── LICENSE
 
-The notebook is structured as a narrative walkthrough combining EDA, modeling, evaluation, and operational design.
+
+The notebook serves as a narrative walkthrough combining exploratory data analysis, modeling decisions, evaluation, and operational design.
+
+The `src/` directory is reserved for extracting reusable components (e.g., model definition, training, evaluation, and human-in-the-loop logic) as the project evolves.
 
 ---
 
